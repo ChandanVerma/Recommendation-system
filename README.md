@@ -1,5 +1,5 @@
 # AI Model Based Recommendations
-This repo generates recommendations using ML based Internal recommendation systems. If any questions, please reach out to Data Science team (Thulasiram, Chandan).
+This repo generates recommendations using recommendation systems.
 
 # Set-up .env file
 There needs to be a `.env` file with following parameters.
@@ -8,10 +8,10 @@ AWS_ACCESS_KEY_ID=YOUR AWS ACCESS KEY
 AWS_SECRET_ACCESS_KEY=YOUR AWS SECRET KEY
 AWS_REGION=us-east-2
 
-ES_HOST = 'vpc-ai-int-recommendations-dev-aanqbnh3dxtic7katkegebxebq.us-east-2.es.amazonaws.com'
-ES_PORT = 443
+ES_HOST = YOUR ES HOST
+ES_PORT = YOUR ES PORT
 
-REDIS_IP = 'recommended-api-cache-dev.o6v01l.ng.0001.use2.cache.amazonaws.com'
+REDIS_IP = YOUR REDIS URL
 REDIS_PORT = 6379
 ASSET_FS_DB = 1
 USER_FS_DB = 1
@@ -67,16 +67,16 @@ Response:
 ]
 ```
 
-The API returns a list of lomotif ids that needs to be recommended sorted on probability score. i.e. lomotif id higher on the list has the higher probability of watch completion
+The API returns a list of video ids that needs to be recommended sorted on probability score. i.e. videos id higher on the list has the higher probability of watch completion
 
-The backend team needs to filter this list based on user_blacklist from the ES index and make recommendations to make sure that no same lomotif is recommended to user again and again
+The backend team needs to filter this list based on user_blacklist from the ES index and make recommendations to make sure that no same videos is recommended to user again and again
 
 ### NOTE: This repo assumes that ES DB and Redis Feature store is up and running with the folowing infomation
 
 #### 1. ES 
 ##### Asset Index
 ``` 
-lomotif_id
+video_id
 creation_date
 production_country
 moderation_status
@@ -93,7 +93,7 @@ user_blacklist
 #### 2. Redis Feature Store
 ##### Asset feature store
 ```
-{'prob_pc_1_watch': '0.176717412', 'lomotif_vv': '2', 'prob_asset_watch': '0.161405162'}
+{'prob_pc_1_watch': '0.176717412', 'video_vv': '2', 'prob_asset_watch': '0.161405162'}
 ```
 
 ##### User feature store
