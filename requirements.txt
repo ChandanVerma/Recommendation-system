@@ -1,0 +1,14 @@
+fastapi
+logzero
+more_itertools
+numpy
+opensearch_py
+pandas
+pydantic
+python-dotenv
+PyYAML
+redis
+requests_aws4auth
+uvicorn
+xgboost
+s3fs

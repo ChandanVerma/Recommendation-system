@@ -1,0 +1,9 @@
+model_path : "ranking/models/"
+model_name: asset_user_model_gpu.pkl
+cold_start_model_name: cold_start_model_gpu.pkl
+
+ES_INDEX_NAME: "internal_20221006154106"
+ES_USER_INDEX_NAME: "user_index"
+
+prediction_features : ['prob_user_watch', 'prob_pc_1_watch', 'prob_asset_watch', 'lomotif_vv', 'user_vv']
+cold_start_features : ['prob_pc_1_watch', 'prob_asset_watch', 'lomotif_vv']

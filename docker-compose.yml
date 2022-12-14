@@ -1,0 +1,26 @@
+version: '3'
+services:
+  internal_recommendations_model:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host # might need to change this
+    image: internal_recommendations:latest
+    env_file:
+      - .env
+
+    ##### FOR USING WIH GPU UNCOMMENT THE BELOW PART
+    # environment:
+    #   NVIDIA_VISIBLE_DEVICES: all
+    #   NVIDIA_DRIVER_CAPABILITIES: all 
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: 
+    #             - gpu  
+    
+    working_dir: /app
+    command: bash -c "python internal_reco_api.py"

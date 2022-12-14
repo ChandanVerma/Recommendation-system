@@ -1,0 +1,19 @@
+site_name: Internal Recommendations
+site_url: https://gitlab.com/lomotif/datascience/poc/model_based_recommendations
+nav:
+    - Project Installation: index.md
+    - retrieval/src/get_feat_from_fs.py: get_feat_from_fs.md
+    - retrieval/es_queries/retrieve_candidates.py: retrieve_candidates.md
+    - ranking/inference.py: inference.md
+    - internal_reco_api.py: internal_reco_api.md
+
+plugins:
+  - mkdocstrings
+
+theme: 
+    name: material
+    palette:
+        # scheme: preference uses dark or light mode based on user (OS) preference
+        scheme: dark
+        primary: deep-blue
+        accent: deep-purple
